@@ -62,7 +62,7 @@ and open the template in the editor.
     border: lightgray solid 1px;
     border-radius:5px;
     width:82%;
-    height:220px;
+    height:fit-content;
     padding:5px;
     overflow:hidden; 
     -webkit-transition: up 2s; /* For Chrome, Safari*/
@@ -103,7 +103,7 @@ and open the template in the editor.
     white-space: nowrap;
     box-sizing: border-box;
     font-size:30px;
-    -webkit-animation: marquee 50s linear infinite;
+    -webkit-animation: marquee 45s linear infinite;
 }
 
 .marquee:hover {
@@ -113,7 +113,7 @@ and open the template in the editor.
 
 /* Make it move */
 @-webkit-keyframes marquee {
-    0%   { text-indent: 27.5em }
-    100% { text-indent: -105em }
+    0%   { text-indent: 35.5em }
+    100% { text-indent: -75em }
 }
 

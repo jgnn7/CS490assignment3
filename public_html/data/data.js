@@ -22,8 +22,8 @@ function load_data() {
     
     for (var i = 0; i < data.length; i++){
         headline += make_marquee(data[i], i); 
-        story_details += make_story(data[i]);
     }
+    story_details += make_story(data[0]);
         $("news").innerHTML = headline;
         $("detail").innerHTML = story_details;
 }
@@ -55,7 +55,7 @@ function get_headline(x) {
 
 function change_story(headline) {
     var data = news["news"];
-    var story_detail;
+    var story_detail="";
     story_detail += make_story(data[headline]);
     $("detail").innerHTML = story_detail;
 //    var headline=selected?"selected_headline":"headline";
