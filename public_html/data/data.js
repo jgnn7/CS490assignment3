@@ -31,7 +31,7 @@ function load_data() {
 function make_marquee(data, i) {
     html = "";
     var x = i;
-    html += "<p class='news_item' onclick='get_headline(x)'>" + " " + data.heading + "" + x +  " " + "</p>";
+    html += "<p class='news_item' onclick='change_story("+ x +")'>" + " " + data.heading + "" + x +  " " + "</p>";
     html += "<img class='news_img' src='icons/NBA.jpg'>"; 
     return html;
 }
@@ -54,21 +54,25 @@ function get_headline(x) {
 
 
 function change_story(headline) {
-    var headline=selected?"selected_headline":"headline";
-    document.getElementsByClassName("selected_headline")[0].className="news_item";
-    headline.className="selected_headline";   
-        
-    return headline;
+    var data = news["news"];
+    var story_detail;
+    story_detail += make_story(data[headline]);
+    $("detail").innerHTML = story_detail;
+//    var headline=selected?"selected_headline":"headline";
+//    document.getElementsByClassName("selected_headline")[0].className="news_item";
+//    headline.className="selected_headline";   
+//        
+//    return headline;
 }
 
 function toggle(el) {
-    if (el.className != "pause")
+    if (el.className !== "pause")
     {
         el.src = 'icons/pause.png';
         el.className = "pause";
         $("news").style.webkitAnimationPlayState = "";
     }
-    else if (el.className == "pause")
+    else if (el.className === "pause")
     {
         el.src = 'icons/play.png';
         el.className = "play";
